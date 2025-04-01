@@ -1,6 +1,7 @@
 {
   "name": "my-dapp",
   "version": "0.1.0",
+  "homepage": "https://blazeeth.github.io/BLX-DAPP",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

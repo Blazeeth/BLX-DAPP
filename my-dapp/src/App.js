@@ -175,7 +175,7 @@ function App() {
           </div>
           </div>
           <div className="home-social-links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <a href="https://github.com/blazeeth" target="_blank" rel="noopener noreferrer" className="social-icon">
             <img src={githublogo} alt="GitHub" />
             </a>
               </div>
