@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import MoneyTransferABI from "./MoneyTransferABI.json";
 import "./index.css";
+import metamasklogo from './assets/metamask.png';
+import githublogo from './assets/github.png';
 
 const CONTRACT_ADDRESS = "0x350ddFb12A1560ceA27E39aA7dc153138197bA18";
 
@@ -118,7 +120,7 @@ function App() {
                               {account ? (
                                 <>
                           <span className="metamask-icon">
-                            <img src="/metamask.png" alt="MetaMask" />
+                            <img src={metamasklogo} alt="MetaMask" />
                           </span>
                           {` ${account.slice(0, 6)}...${account.slice(-4)}`}
                         </>
@@ -174,7 +176,7 @@ function App() {
           </div>
           <div className="home-social-links">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-            <img src="/github.png" alt="GitHub" />
+            <img src={githublogo} alt="GitHub" />
             </a>
               </div>
         </section>
