@@ -13,7 +13,7 @@ Check out the live demo of the dApp at : [https://blazeeth.github.io/BLX-DAPP/](
 - View transaction history
 - Responsive design for all devices
 
-  ## Technologies Used
+ ## Technologies Used
 
 - **Solidity**: For the smart contract on the Sepolia testnet.
 - **React**: For the frontend of the dApp.
