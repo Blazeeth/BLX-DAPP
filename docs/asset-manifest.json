@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BLX-DAPP/static/css/main.ac2a565e.css",
-    "main.js": "/BLX-DAPP/static/js/main.298fa01f.js",
+    "main.js": "/BLX-DAPP/static/js/main.d74e478e.js",
     "static/js/453.7d602bfa.chunk.js": "/BLX-DAPP/static/js/453.7d602bfa.chunk.js",
     "static/media/Home.png": "/BLX-DAPP/static/media/Home.60c87ea59f0fb5561ba0.png",
     "static/media/Contact.png": "/BLX-DAPP/static/media/Contact.517483f43a8bf5e83f83.png",
@@ -9,11 +9,11 @@
     "static/media/Transaction.png": "/BLX-DAPP/static/media/Transaction.4bcd71bd9fd2b4f1d1ff.png",
     "index.html": "/BLX-DAPP/index.html",
     "main.ac2a565e.css.map": "/BLX-DAPP/static/css/main.ac2a565e.css.map",
-    "main.298fa01f.js.map": "/BLX-DAPP/static/js/main.298fa01f.js.map",
+    "main.d74e478e.js.map": "/BLX-DAPP/static/js/main.d74e478e.js.map",
     "453.7d602bfa.chunk.js.map": "/BLX-DAPP/static/js/453.7d602bfa.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ac2a565e.css",
-    "static/js/main.298fa01f.js"
+    "static/js/main.d74e478e.js"
   ]
 }
