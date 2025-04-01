@@ -15,6 +15,7 @@ function App() {
   const [receiver, setReceiver] = useState("");
   const [amount, setAmount] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showDisconnectPopup, setShowDisconnectPopup] = useState(false);
   const [contactForm, setContactForm] = useState({ name: "", email: "", message: "" });
 
   const connectWallet = async () => {
@@ -36,6 +37,15 @@ function App() {
     } else {
       alert("Please install MetaMask!");
     }
+  };
+  const disconnectWallet = () => {
+    setAccount("");
+    setProvider(null);
+    setSigner(null);
+    setContract(null);
+    setBalance("0");
+    setTransactions([]);
+    setShowDisconnectPopup(false); // Close the popup
   };
 
   const updateBalance = async (prov, acc) => {
@@ -93,28 +103,58 @@ function App() {
     <div>
       {/* Navbar */}
       <nav className="navbar">
-        <div className="brand">MyCrypto</div>
-        <ul className="nav-links">
-          <li onClick={() => scrollToSection("home")}>Home</li>
-          <li onClick={() => scrollToSection("transactions")}>Transactions</li>
-          <li onClick={() => scrollToSection("contact")}>Contact</li>
-        </ul>
-        <button onClick={connectWallet} className="wallet-btn">
-          {account ? `Connected: ${account.slice(0, 6)}...${account.slice(-4)}` : "Connect Wallet"}
-        </button>
-      </nav>
+              <div className="brand">BLX</div>
+              <ul className="nav-links">
+                <li onClick={() => scrollToSection("home")}>Home</li>
+                <li onClick={() => scrollToSection("transactions")}>Transactions</li>
+                <li onClick={() => scrollToSection("about")}>About</li>
+                <li onClick={() => scrollToSection("contact")}>Contact</li>
+              </ul>
+              <div className="wallet-container">
+                    <button
+                              onClick={() => (account ? setShowDisconnectPopup(true) : connectWallet())}
+                              className="wallet-btn"
+                            >
+                              {account ? (
+                                <>
+                          <span className="metamask-icon">
+                            <img src="/metamask.png" alt="MetaMask" />
+                          </span>
+                          {` ${account.slice(0, 6)}...${account.slice(-4)}`}
+                        </>
+                      ) : (
+                        "Connect Wallet"
+                      )}
+                    </button>
+                    {showDisconnectPopup && (
+                      <div className="disconnect-popup">
+                        <button onClick={disconnectWallet} className="disconnect-btn">
+                          Disconnect
+                        </button>
+                        <button
+                          onClick={() => setShowDisconnectPopup(false)}
+                          className="close-popup-btn"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    )}
+                  </div>
+            </nav>
 
       {/* Main Content */}
       <main>
         {/* Home Section */}
         <section id="home">
-          <h1>Simple Money Transfer</h1>
+          
+          <div className="box">
+          <h1>Sepolia Etherium Transfer</h1>
           <div className="balance">
             <p>
-              Balance: <span>{balance} ETH</span>
+              Balance : <span>{balance} ETH</span>
             </p>
-          </div>
-          <div className="transfer-form">
+            </div>
+            <div className="transfer-form">
             <input
               type="text"
               placeholder="Receiver Address"
@@ -131,31 +171,48 @@ function App() {
               {loading ? "Sending..." : "Send"}
             </button>
           </div>
+          </div>
+          <div className="home-social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+            <img src="/github.png" alt="GitHub" />
+            </a>
+              </div>
         </section>
 
         {/* Transactions Section */}
         <section id="transactions">
-          <h2>Transaction History</h2>
+          <h1>Transaction History</h1>
           {transactions.length === 0 ? (
             <p>No transactions yet.</p>
           ) : (
             <ul className="transaction-list">
               {transactions.map((tx, index) => (
                 <li key={index}>
-                  <span>{`${tx.sender.slice(0, 6)}...${tx.sender.slice(-4)}`}</span>
-                  <span>sent</span>
+                  <span>{`${tx.sender.slice(0, 4)}...${tx.sender.slice(-4)}`}</span>
+                  <span>Sent</span>
                   <span>{ethers.formatEther(tx.amount)} ETH</span>
                   <span>to</span>
-                  <span>{`${tx.receiver.slice(0, 6)}...${tx.receiver.slice(-4)}`}</span>
+                  <span>{`${tx.receiver.slice(0, 4)}...${tx.receiver.slice(-4)}`}</span>
                 </li>
               ))}
             </ul>
           )}
         </section>
 
+        {/* About Section */}
+        <section id="about">
+          
+          <h1>About BLX</h1>
+            <div className="para">
+                <p>BLX dApp is a user-friendly decentralized application designed to simplify cryptocurrency transactions on the Ethereum blockchain. With a sleek, intuitive interface, BLX allows users to seamlessly send ETH, track their wallet balance, and view transaction history all in one place. Whether you're a crypto novice or a seasoned user, BLX dApp provides a secure and efficient way to manage your digital assets, complete with explorer links for transparency and a dedicated contact section to stay connected. Built for accessibility, BLX dApp empowers users to engage with blockchain technology effortlessly.
+
+                </p>
+            </div>
+         </section>
+
         {/* Contact Section */}
         <section id="contact">
-          <h2>Contact Us</h2>
+          <h1>Contact Us</h1>
           <form className="contact-form" onSubmit={handleContactSubmit}>
             <input
               type="text"
@@ -183,14 +240,14 @@ function App() {
             <button type="submit">Send Message</button>
           </form>
           <div className="social-links">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer">
               Twitter
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              Facebook
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+             Github
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              Instagram
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              Linkedin
             </a>
           </div>
         </section>
@@ -198,15 +255,14 @@ function App() {
 
       {/* Footer */}
       <footer>
-        <div className="social-icons">
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">🐦</a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">📘</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">📸</a>
-        </div>
-        <p>© 2025 MyCrypto. All rights reserved.</p>
+        <p>Copyright © 2025 blxdapp.com. All rights reserved.</p>
         <ul className="footer-links">
-          <li onClick={() => scrollToSection("home")}>Home</li>
+          <li onClick={() => scrollToSection("home")}>Home </li>
+          <li>|</li>
           <li onClick={() => scrollToSection("transactions")}>Transactions</li>
+          <li>|</li>
+          <li onClick={() => scrollToSection("about")}>About</li>
+          <li>|</li>
           <li onClick={() => scrollToSection("contact")}>Contact</li>
         </ul>
       </footer>

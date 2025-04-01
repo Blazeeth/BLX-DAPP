@@ -1,295 +1,859 @@
-/* Reset and Base Styles */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-/* Navbar */
-.navbar {
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #00bcd4;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-links li {
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-}
-
-.nav-links li:hover {
-  color: #00bcd4;
-}
-
-.wallet-btn {
-  background-color: #00bcd4;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.wallet-btn:hover {
-  background-color: #0097a7;
-}
-
-/* Main Content */
-main {
-  display: flex;
-  flex-direction: column;
-}
-
-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  scroll-snap-align: start;
-}
-
-h1, h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #1a1a1a;
-}
-
-/* Home Section */
-.balance {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
-  text-align: center;
-  width: 100%;
-  max-width: 500px;
-}
-
-.balance p {
-  font-size: 1.1rem;
-}
-
-.balance span {
-  font-weight: bold;
-  color: #00bcd4;
-}
-
-.transfer-form {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 500px;
-}
-
-.transfer-form input {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.transfer-form input:focus {
-  outline: none;
-  border-color: #00bcd4;
-  box-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
-}
-
-.transfer-form button {
-  background-color: #00bcd4;
-  color: #fff;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.transfer-form button:hover {
-  background-color: #0097a7;
-}
-
-.transfer-form button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-/* Transactions Section */
-#transactions {
-  background-color: #e8ecef;
-}
-
-.transaction-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 500px;
-}
-
-.transaction-list li {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.transaction-list span:nth-child(3) {
-  font-weight: bold;
-  color: #00bcd4;
-}
-
-/* Contact Section */
-#contact {
-  background-color: #f4f4f4;
-}
-
-.contact-form {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  width: 100%;
-  max-width: 500px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #00bcd4;
-  box-shadow: 0 0 5px rgba(0, 188, 212, 0.3);
-}
-
-.contact-form button {
-  background-color: #00bcd4;
-  color: #fff;
-  border: none;
-  padding: 0.75rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.contact-form button:hover {
-  background-color: #0097a7;
-}
-
-.social-links {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-links a {
-  color: #00bcd4;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: #0097a7;
-}
-
-/* Footer */
-footer {
-  background-color: #1a1a1a;
-  color: #fff;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.social-icons {
-  margin-bottom: 1rem;
-}
-
-.social-icons a {
-  color: #fff;
-  font-size: 1.5rem;
-  margin: 0 0.5rem;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #00bcd4;
-}
-
-footer p {
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
-
-.footer-links {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.footer-links li {
-  cursor: pointer;
-  font-size: 1rem;
-  transition: color 0.3s;
-}
-.footer-links li:hover {
-  color: #00bcd4;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.781);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .brand {
+    font-size: 2rem; 
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 4.8vw; 
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .nav-links {
+    display: flex;
+    color: #ffffffbb;
+    font-family: sans-serif;
+    list-style: none;
+    gap: 2rem;
+  }
+  
+  .nav-links li {
+    cursor: pointer;
+    font-size: 1.125rem; 
+    transition: color 0.3s;
+  }
+  
+  .nav-links li:hover {
+    color: #fcffff;
+  }
+  
+  .metamask-icon {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  
+  .metamask-icon img {
+    width: 1.25rem; 
+    height: 1.25rem;
+    margin-top: 0.2rem;
+  }
+  
+  /* Wallet Container */
+  .wallet-container {
+    position: relative;
+  }
+  
+  /* Disconnect Popup */
+  .disconnect-popup {
+    position: absolute;
+    top: 100%;
+    right: 3vw;
+    border-radius: 12px;
+    margin-top: 5px;
+    width: 10rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    z-index: 101;
+  }
+  
+  /* Disconnect Button */
+  .disconnect-btn {
+    background-color: rgba(255, 255, 255, 0.616);
+    color: #000000d5;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  
+  .disconnect-btn:hover {
+    background-color: rgba(255, 255, 255, 0.74);
+    color: #000000;
+  }
+  
+  /* Close Button */
+  .close-popup-btn {
+    background-color: rgba(255, 255, 255, 0.616);
+    color: #000000d5;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  
+  .close-popup-btn:hover {
+    background-color: rgba(255, 255, 255, 0.74);
+    color: #000000;
+  }
+  
+  .wallet-btn {
+    background-color: #fcffffb9;
+    color: #000000;
+    font-size: 1rem; 
+    font-weight: 480;
+    border: none;
+    padding: 0.4rem 1rem;
+    margin-right: 3vw; 
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+  
+  .wallet-btn:hover {
+    background-color: #fcffffda;
+    color: #000000;
+  }
+  
+  /* Main Content */
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #home {
+    background: url(Home.png) no-repeat center center/cover;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-top: -4.6rem; 
+    scroll-snap-align: start;
+    position: relative;
+  }
+  
+  /* Home Section Social Links */
+  .home-social-links {
+    position: absolute;
+    right: 3vw;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .social-icon img {
+    width: 2.5rem; 
+    height: 2.5rem;
+    margin-top: 30.2rem;
+  }
+  
+  .social-icon {
+    text-decoration: none;
+    transition: transform 0.3s ease, opacity 0.3s;
+  }
+  
+  .social-icon:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+  
+  #transactions {
+    background: url(Transaction.png) no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    scroll-snap-align: start;
+  }
+  
+  #about {
+    background: url(About.png) no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    scroll-snap-align: start;
+  }
+  
+  #contact {
+    background: url(Contact.png) no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    scroll-snap-align: start;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 0.5rem; 
+    color: #000000;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  
+  .box {
+    background-color: #cccccc94;
+    padding: 1rem;
+    border: 3px solid #f3f3f3bb;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 6.8rem; 
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+    max-width: 34rem; 
+    height: auto; 
+    min-height: 25rem; 
+  }
+  
+  /* Home Section */
+  .balance {
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 0.625rem; 
+    text-align: center;
+    width: 100%;
+    max-width: 31.25rem; 
+  }
+  
+  .balance p {
+    font-size: 1.1rem;
+    color: #000000e1;
+  }
+  
+  .balance span {
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .transfer-form {
+    padding: 1.5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 31.25rem;
+  }
+  
+  .transfer-form input {
+    padding: 0.75rem;
+    border: 1px solid #000000e5;
+    background-color: #ccccccc7;
+    border-radius: 15px;
+    width: 100%;
+    font-size: 0.9375rem; 
+    margin-top: 0.0625rem; 
+    margin-bottom: 0.5rem; 
+  }
+  
+  .transfer-form input:focus {
+    outline: none;
+    background-color: #ffffffb6;
+    border: 2px solid #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .transfer-form button {
+    background-color: #000000e5;
+    color: #ffffffd8;
+    border: none;
+    padding: 0.9rem;
+    font-size: 1.125rem; 
+    border-radius: 15px;
+    margin-top: 0.75rem; 
+    margin-bottom: 0.9375rem; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .transfer-form button:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .transfer-form button:disabled {
+    background-color: #000000;
+    cursor: not-allowed;
+  }
+  
+  /* Transactions Section */
+  #transactions h1 {
+    color: #e8ecefd7;
+    font-size: 2.5rem; 
+  }
+  
+  .transaction-list {
+    list-style: none;
+    display: flex;
+    margin-top: 3.125rem; 
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 31.25rem;
+  }
+  
+  .transaction-list li {
+    background-color: #ffffff86;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+  }
+  
+  .transaction-list span:nth-child(3) {
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  /* Contact Section */
+  #contact h1 {
+    color: #ccc;
+    font-size: 2.5rem;
+    margin-top: 3.125rem;
+    margin-bottom: 1.875rem; 
+    margin-left: -31.25rem; 
+  }
+  
+  #about h1 {
+    color: #e8ecefd7;
+    font-size: 2.5rem;
+    margin-top: 1.875rem;
+    margin-left: 23.75rem; 
+  }
+  
+  .para {
+    width: 31.25rem;
+    height: 25rem;
+    background-color: rgba(255, 255, 255, 0.349);
+    color: #000000;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    margin-top: 1.875rem;
+    margin-left: 25rem;
+    padding: 2rem;
+    text-align: justify;
+    line-height: 1.8rem;
+  }
+  
+  .contact-form {
+    background-color: #ffffff57;
+    border: 2px solid #ffffff;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin-left: -31.25rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    width: 27.5rem; 
+    height: 23.75rem; 
+    max-width: 31.25rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem;
+    background-color: #cccccc7e;
+    border: 1px solid #cccccc60;
+    border-radius: 12px;
+    color: #000000ce;
+    margin-top: 0.0625rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 6.25rem; 
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border: 2px solid #000000b6;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .contact-form button {
+    background-color: #000000e0;
+    color: #ffffffec;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .social-links {
+    text-align: center;
+    display: flex;
+    margin-left: -31.25rem;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .social-links a {
+    color: #ffffffb2;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: #ffffff;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  footer p {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    padding: 0.9375rem 5rem; 
+  }
+  
+  .footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    text-decoration: none;
+    margin: 0.3125rem 2.5rem; 
+    font-size: 0.875rem; 
+    transition: 0.3s;
+  }
+  
+  .footer-links li {
+    cursor: pointer;
+    font-size: 1rem;
+    color: #ccccccda;
+    transition: color 0.3s;
+  }
+  
+  .footer-links li:hover {
+    color: #ffffff;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1024px) {
+    /* Navbar */
+    .brand {
+      font-size: 1.5rem;
+      margin-left: 2vw;
+    }
+  
+    .nav-links {
+      gap: 1.5rem;
+    }
+  
+    .nav-links li {
+      font-size: 1rem;
+    }
+  
+    .wallet-btn {
+      font-size: 0.875rem;
+      padding: 0.3rem 0.8rem;
+      margin-right: 2vw;
+    }
+  
+    .metamask-icon img {
+      width: 1rem;
+      height: 1rem;
+    }
+  
+    .disconnect-popup {
+      right: 2vw;
+      width: 8rem;
+    }
+  
+    /* Home Section */
+    #home {
+      padding: 1.5rem;
+      margin-top: -8rem;
+    }
+  
+    .box {
+      max-width: 25rem;
+      min-height: 20rem;
+    }
+  
+    .balance {
+      max-width: 25rem;
+    }
+  
+    .transfer-form {
+      max-width: 25rem;
+    }
+  
+    .transfer-form input {
+      font-size: 0.875rem;
+    }
+  
+    .transfer-form button {
+      font-size: 1rem;
+    }
+  
+    .home-social-links {
+      right: 2vw;
+      gap: 2rem;
+    }
+  
+    .social-icon img {
+      width: 2rem;
+      height: 2rem;
+    }
+  
+    /* Transactions Section */
+    #transactions h1 {
+      font-size: 2rem;
+      margin-top: 6rem;
+    }
+  
+    .transaction-list {
+      margin-top: 2rem;
+      max-width: 25rem;
+    }
+  
+    .transaction-list li {
+      font-size: 0.875rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  
+    /* About Section */
+    #about h1 {
+      font-size: 2rem;
+      margin-left: 0;
+      text-align: center;
+      margin-top: 6rem;
+    }
+  
+    .para {
+      width: 90%;
+      max-width: 25rem;
+      height: auto;
+      min-height: 20rem;
+      margin-left: 0;
+      margin-top: 1rem;
+      padding: 1.5rem;
+    }
+  
+    /* Contact Section */
+    #contact h1 {
+      font-size: 2rem;
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .contact-form {
+      margin-left: 0;
+      width: 90%;
+      max-width: 25rem;
+      height: auto;
+      min-height: 20rem;
+    }
+  
+    .social-links {
+      margin-left: 0;
+    }
+  
+    /* Footer */
+    footer {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    footer p {
+      padding: 0.5rem 2rem;
+    }
+  
+    .footer-links {
+      margin: 0.5rem 1rem;
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0.5rem;
+    }
+  
+    .brand {
+      font-size: 1.25rem;
+      margin-left: 0;
+    }
+  
+    .nav-links {
+      gap: 1rem;
+    }
+  
+    .nav-links li {
+      font-size: 0.875rem;
+    }
+  
+    .wallet-btn {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+      margin-right: 0;
+    }
+  
+    .disconnect-popup {
+      right: 1vw;
+      width: 7rem;
+    }
+  
+    /* Home Section */
+    .box {
+      margin-top: 5rem;
+      max-width: 90%;
+      min-height: 18rem;
+    }
+  
+    .balance {
+      max-width: 90%;
+    }
+  
+    .transfer-form {
+      max-width: 90%;
+    }
+  
+    .transfer-form input {
+      font-size: 0.75rem;
+    }
+  
+    .transfer-form button {
+      font-size: 0.875rem;
+      padding: 0.6rem;
+    }
+  
+    .home-social-links {
+      right: 1vw;
+      gap: 1.5rem;
+    }
+  
+    .social-icon img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  
+    /* Transactions Section */
+    #transactions h1 {
+      font-size: 1.5rem;
+    }
+  
+    .transaction-list {
+      margin-top: 1.5rem;
+      max-width: 90%;
+    }
+  
+    /* About Section */
+    #about h1 {
+      font-size: 1.5rem;
+    }
+  
+    .para {
+      padding: 1rem;
+    }
+  
+    /* Contact Section */
+    #contact h1 {
+      font-size: 1.5rem;
+      margin-top: 6rem;
+    }
+  
+    .contact-form {
+      padding: 1rem;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 0.875rem;
+    }
+  
+    .contact-form button {
+      font-size: 0.875rem;
+    }
+  
+    .social-links a {
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Navbar */
+    .brand {
+      font-size: 1rem;
+    }
+  
+    .nav-links {
+      gap: 0.5rem;
+    }
+  
+    .nav-links li {
+      font-size: 0.75rem;
+    }
+  
+    .wallet-btn {
+      font-size: 0.625rem;
+      padding: 0.2rem 0.5rem;
+    }
+  
+    .metamask-icon img {
+      width: 0.875rem;
+      height: 0.875rem;
+    }
+  
+    .disconnect-popup {
+      right: 0.5vw;
+      width: 6rem;
+    }
+  
+    .disconnect-btn,
+    .close-popup-btn {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.5rem;
+    }
+  
+    /* Home Section */
+    .box {
+      margin-top: 1.5rem;
+      min-height: 15rem;
+    }
+  
+    .balance p {
+      font-size: 0.875rem;
+    }
+  
+    .transfer-form input {
+      font-size: 0.625rem;
+    }
+  
+    .transfer-form button {
+      font-size: 0.75rem;
+      padding: 0.5rem;
+    }
+  
+    .home-social-links {
+      gap: 1rem;
+    }
+  
+    .social-icon img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  
+    /* Transactions Section */
+    #transactions h1 {
+      font-size: 1.25rem;
+    }
+  
+    .transaction-list {
+      margin-top: 1rem;
+    }
+  
+    .transaction-list li {
+      font-size: 0.75rem;
+    }
+  
+    /* About Section */
+    #about h1 {
+      font-size: 1.25rem;
+    }
+  
+    /* Contact Section */
+    #contact h1 {
+      font-size: 1.25rem;
+    }
+  
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 0.75rem;
+    }
+  
+    .contact-form button {
+      font-size: 0.75rem;
+    }
+  
+    .social-links a {
+      font-size: 0.75rem;
+    }
+  
+    /* Footer */
+    footer p {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .footer-links {
+      gap: 0.5rem;
+    }
+  
+    .footer-links li {
+      font-size: 0.875rem;
+    }
+  }
